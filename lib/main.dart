@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:somu/HomeScreenScaffold.dart';
+import 'package:somu/home_screen_page.dart';
 
 void main() {
   runApp(const MyApp());

@@ -24,8 +24,12 @@ dev_dependencies:
 
 flutter:
   assets:
-    - assets/AndroidLogo.svg
+    - assets/MobilePhones.svg
+    - assets/Computers.svg
+    - assets/Tablets.svg
+    - assets/GameConsoles.svg
     - assets/AppleLogo.svg
+    - assets/Android.svg
 
   fonts:
     - family: Roboto

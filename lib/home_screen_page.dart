@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somu/card_maker.dart';
+import 'package:somu/mobile_devices_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -91,105 +92,90 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Padding(
-          padding: EdgeInsets.only(top: 24.0),
-          child: Center(
-            child: Text(
-              "SOMU APP",
-              style: TextStyle(
-                  color: Colors.black, fontSize: 36, fontFamily: 'Roboto'),
-            ),
+        title: const Center(
+          child: Text(
+            "SOMU APP",
+            style: TextStyle(
+                color: Colors.white, fontSize: 36, fontFamily: 'Roboto'),
           ),
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: /*const Color.fromRGBO(41, 50, 65, 1),*/ Colors
+            .transparent,
         elevation: 0,
       ),
       backgroundColor: const Color.fromRGBO(246, 247, 249, 1),
       // body: devicesPage.elementAt(_selectedIndex),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: 32.0, top: 32),
-              child: Text(
-                "All Devices",
-                style: TextStyle(fontSize: 28),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(32.0),
-              child: Text(
-                "See Devices",
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            Row(
-              children: [
-                Card(
-                  elevation: 5,
-                  child: Stack(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/AppleLogo.svg',
-                        alignment: Alignment.center,
-                        width: MediaQuery.of(context).size.width * 0.2,
-                        height: MediaQuery.of(context).size.height * 0.2,
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: Stack(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/AppleLogo.svg',
-                        alignment: Alignment.center,
-                        width: MediaQuery.of(context).size.width * 0.2,
-                        height: MediaQuery.of(context).size.height * 0.2,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Card(
-                  elevation: 5,
-                  child: Stack(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/AppleLogo.svg',
-                        alignment: Alignment.center,
-                        width: MediaQuery.of(context).size.width * 0.2,
-                        height: MediaQuery.of(context).size.height * 0.2,
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: Stack(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/AppleLogo.svg',
-                        alignment: Alignment.center,
-                        width: MediaQuery.of(context).size.width * 0.2,
-                        height: MediaQuery.of(context).size.height * 0.2,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
+      body: Stack(children: [
+        Container(
+          color: const Color.fromRGBO(41, 50, 65, 1),
         ),
-      ),
+        Padding(
+          padding: EdgeInsets.only(top: height * 0.35),
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(100),
+                  bottomRight: Radius.circular(100)),
+            ),
+          ),
+        ),
+        SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 28.0, top: height * 0.15),
+                child: const Text(
+                  "All Devices",
+                  style: TextStyle(fontSize: 28, color: Colors.white),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(28.0),
+                child: Text(
+                  "See Devices",
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 18, right: 18),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    CardClass.cardMaker(context, "", "assets/MobilePhones.svg",
+                        width * 0.22, height * 0.2, const MobileDevices()),
+                    CardClass.cardMaker(context, "", "assets/Computers.svg",
+                        width * 0.22, height * 0.2, const MobileDevices()),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 18.0, top: 8, right: 18),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    CardClass.cardMaker(context, "", "assets/GameConsoles.svg",
+                        width * 0.2, height * 0.2),
+                    CardClass.cardMaker(context, "", "assets/Tablets.svg",
+                        width * 0.2, height * 0.2),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ]),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
+        backgroundColor: const Color.fromRGBO(41, 50, 65, 1),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.dashboard), label: "Dashboard"),
@@ -197,7 +183,8 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.search), label: "IMEI Search"),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.blueGrey,
         onTap: _onItemTapped,
       ),
     );
