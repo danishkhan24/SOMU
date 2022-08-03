@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.1.6
   flutter_svg: ^1.0.3
+  flutter_inappwebview: ^5.4.3+7
 
 dev_dependencies:
   flutter_test:

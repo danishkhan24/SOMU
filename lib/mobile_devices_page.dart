@@ -50,7 +50,7 @@ class _MobileDevicesState extends State<MobileDevices> {
                         EdgeInsets.only(top: height * 0.25, right: width * 0.1),
                     child: const Text(
                       "Please Select an Operating System",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
                 ],
