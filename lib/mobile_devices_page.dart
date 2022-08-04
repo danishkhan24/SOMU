@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:somu/card_maker.dart';
+import 'package:somu/instruction_set.dart';
+import 'package:flutter/services.dart';
 
 class MobileDevices extends StatefulWidget {
   const MobileDevices({Key? key}) : super(key: key);
@@ -9,6 +11,26 @@ class MobileDevices extends StatefulWidget {
 }
 
 class _MobileDevicesState extends State<MobileDevices> {
+  List<String>? instructionAndroid;
+  bool instructionLoaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    fileParser();
+  }
+
+  fileParser() async {
+    String textAsset =
+        "assets/All_Instructions/Android.txt"; //path to text file asset
+    String text = await rootBundle.loadString(textAsset);
+    instructionAndroid = text.isNotEmpty ? text.split(":::") : ["NaN", "NaN"];
+    setState(() {
+      instructionLoaded = true;
+    });
+    // print(text);
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -55,19 +77,33 @@ class _MobileDevicesState extends State<MobileDevices> {
                   ),
                 ],
               ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 18, right: 18, top: height * 0.1),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    CardClass.cardMaker(context, "", "assets/AppleLogo.svg",
-                        width * 0.1, height * 0.2),
-                    CardClass.cardMaker(context, "", "assets/Android.svg",
-                        width * 0.22, height * 0.2),
-                  ],
-                ),
-              ),
+              instructionLoaded
+                  ? Padding(
+                      padding: EdgeInsets.only(
+                          left: 18, right: 18, top: height * 0.1),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          CardClass.cardMaker(
+                            context,
+                            "",
+                            "assets/AppleLogo.svg",
+                            width * 0.1,
+                            height * 0.2,
+                          ),
+                          CardClass.cardMaker(
+                            context,
+                            "",
+                            "assets/Android.svg",
+                            width * 0.1,
+                            height * 0.2,
+                            InstructionPage(Instruction(instructionAndroid![0],
+                                instructionAndroid![1])),
+                          ),
+                        ],
+                      ),
+                    )
+                  : const Center(child: CircularProgressIndicator.adaptive()),
             ],
           ),
         ],
