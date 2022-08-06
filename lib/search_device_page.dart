@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:somu/wiki_card.dart';
 
 class SearchDevicePage extends StatelessWidget {
   const SearchDevicePage({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class SearchDevicePage extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               elevation: 1,
-              shape: const CircleBorder(),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
             ),
           ),
         ],
@@ -180,7 +181,11 @@ class SearchDevicePage extends StatelessWidget {
                         Material(
                           child: InkWell(
                             splashColor: Colors.grey,
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => DescriptionCard("1", "Go to Settings", "assets/test_photo.png", "Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu ")));
+                            },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [

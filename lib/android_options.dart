@@ -39,7 +39,7 @@ class _AndroidGuidesState extends State<AndroidGuides> {
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               elevation: 1,
-              shape: const CircleBorder(),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
             ),
           ),
         ],

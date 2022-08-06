@@ -31,6 +31,7 @@ flutter:
     - assets/GameConsoles.svg
     - assets/AppleLogo.svg
     - assets/Android.svg
+    - assets/test_photo.png
 
   fonts:
     - family: Roboto
