@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:somu/card_maker.dart';
+import 'package:somu/device_page.dart';
 import 'package:somu/imei_page.dart';
 import 'package:somu/mobile_devices_page.dart';
 
@@ -21,6 +22,7 @@ class _HomePageState extends State<HomePage> {
     devicesPage = [
       const DevicesPage(),
       const IMEISearch(),
+      const DeviceSearch(),
     ];
   }
 
@@ -38,7 +40,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            "SOMU APP",
+            "KEV SOMU",
             style: TextStyle(
                 color: Colors.white, fontSize: 36, fontFamily: 'Roboto'),
           ),
@@ -55,7 +57,9 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
               icon: Icon(Icons.dashboard), label: "Dashboard"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search), label: "IMEI Search"),
+              icon: Icon(Icons.bar_chart_outlined), label: "IMEI Search"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.phone_android), label: "Device Search"),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.white,

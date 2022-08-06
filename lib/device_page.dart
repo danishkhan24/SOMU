@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-class IMEISearch extends StatefulWidget {
-  const IMEISearch({Key? key}) : super(key: key);
+class DeviceSearch extends StatefulWidget {
+  const DeviceSearch({Key? key}) : super(key: key);
 
   @override
-  State<IMEISearch> createState() => _IMEISearchState();
+  State<DeviceSearch> createState() => _DeviceSearchState();
 }
 
-class _IMEISearchState extends State<IMEISearch> {
+class _DeviceSearchState extends State<DeviceSearch> {
   TextEditingController myController = TextEditingController();
 
   @override
@@ -32,7 +32,7 @@ class _IMEISearchState extends State<IMEISearch> {
                 height: height * 0.83,
                 child: InAppWebView(
                   initialUrlRequest:
-                      URLRequest(url: Uri.parse("https://www.imei.info/")),
+                  URLRequest(url: Uri.parse("https://www.gsmarena.com/search.php3?")),
                 ),
               ),
             ),

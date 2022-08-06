@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:somu/android_options.dart';
 import 'package:somu/card_maker.dart';
-import 'package:somu/instruction_set.dart';
-import 'package:flutter/services.dart';
 
 class MobileDevices extends StatefulWidget {
   const MobileDevices({Key? key}) : super(key: key);
@@ -11,24 +10,12 @@ class MobileDevices extends StatefulWidget {
 }
 
 class _MobileDevicesState extends State<MobileDevices> {
-  List<String>? instructionAndroid;
   bool instructionLoaded = false;
 
   @override
-  void initState() {
-    super.initState();
-    fileParser();
-  }
-
-  fileParser() async {
-    String textAsset =
-        "assets/All_Instructions/Android.txt"; //path to text file asset
-    String text = await rootBundle.loadString(textAsset);
-    instructionAndroid = text.isNotEmpty ? text.split(":::") : ["NaN", "NaN"];
-    setState(() {
-      instructionLoaded = true;
-    });
-    // print(text);
+  void dispose() {
+    instructionLoaded = false;
+    super.dispose();
   }
 
   @override
@@ -45,6 +32,25 @@ class _MobileDevicesState extends State<MobileDevices> {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
+        actions: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).popUntil((route) => route.isFirst);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Icon(
+                Icons.home_filled,
+                size: width * 0.08,
+              ),
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.transparent,
+              elevation: 1,
+              shape: const CircleBorder(),
+            ),
+          ),
+        ],
       ),
       body: Stack(
         children: [
@@ -77,33 +83,40 @@ class _MobileDevicesState extends State<MobileDevices> {
                   ),
                 ],
               ),
-              instructionLoaded
-                  ? Padding(
-                      padding: EdgeInsets.only(
-                          left: 18, right: 18, top: height * 0.1),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          CardClass.cardMaker(
-                            context,
-                            "",
-                            "assets/AppleLogo.svg",
-                            width * 0.1,
-                            height * 0.2,
-                          ),
-                          CardClass.cardMaker(
-                            context,
-                            "",
-                            "assets/Android.svg",
-                            width * 0.1,
-                            height * 0.2,
-                            InstructionPage(Instruction(instructionAndroid![0],
-                                instructionAndroid![1])),
-                          ),
-                        ],
-                      ),
-                    )
-                  : const Center(child: CircularProgressIndicator.adaptive()),
+              Padding(
+                padding:
+                    EdgeInsets.only(left: 18, right: 18, top: height * 0.1),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    CardClass.cardMaker(
+                      context,
+                      "",
+                      "assets/AppleLogo.svg",
+                      width * 0.1,
+                      height * 0.2,
+                    ),
+                    CardClass.cardMaker(
+                      context,
+                      "",
+                      "assets/Android.svg",
+                      width * 0.1,
+                      height * 0.2,
+                      const AndroidGuides(),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: height * 0.2),
+                child: const Text(
+                  "Need Help Deciding? Click Here",
+                  style: TextStyle(
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                      fontSize: 16),
+                ),
+              ),
             ],
           ),
         ],
