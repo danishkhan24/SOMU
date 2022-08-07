@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:somu/wiki_card.dart';
+import 'package:somu/custom_icons_icons.dart';
+import 'package:somu/instructions_manuals/calls.dart';
 
 class SearchDevicePage extends StatelessWidget {
   const SearchDevicePage({Key? key}) : super(key: key);
@@ -34,7 +35,8 @@ class SearchDevicePage extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               elevation: 1,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25)),
             ),
           ),
         ],
@@ -110,7 +112,7 @@ class SearchDevicePage extends StatelessWidget {
                       "Messenger",
                       "Instagram",
                       "Facebook",
-                      "Drive",
+                      "Google Drive",
                       "One Drive",
                       "Dropbox",
                       "Twitter",
@@ -119,18 +121,18 @@ class SearchDevicePage extends StatelessWidget {
                       "Telegram",
                     ],
                     [
-                      Icons.face,
-                      Icons.camera,
-                      Icons.message,
-                      Icons.photo,
-                      Icons.face,
-                      Icons.camera,
-                      Icons.message,
-                      Icons.photo,
-                      Icons.face,
-                      Icons.camera,
-                      Icons.message,
-                      Icons.photo
+                      CustomIcons.whatsapp,
+                      CustomIcons.snapchat,
+                      CustomIcons.facebook_messenger,
+                      CustomIcons.instagram,
+                      CustomIcons.facebook,
+                      CustomIcons.google_drive,
+                      CustomIcons.cloud_1,
+                      CustomIcons.dropbox_1,
+                      CustomIcons.twitter_1,
+                      CustomIcons.discord,
+                      CustomIcons.reddit,
+                      CustomIcons.telegram_plane,
                     ],
                   ),
                 ],
@@ -181,27 +183,43 @@ class SearchDevicePage extends StatelessWidget {
                         Material(
                           child: InkWell(
                             splashColor: Colors.grey,
-                            onTap: (){
+                            onTap: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => DescriptionCard("1", "Go to Settings", "assets/test_photo.png", "Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu ")));
+                                  MaterialPageRoute(
+                                      builder: (context) =>  const SliverScaffold(
+                                          "1",
+                                          "Go to Settings",
+                                          "assets/test_photo.png",
+                                          "Then do da dudadudadu Then do da dudadudadu"
+                                              "Then do da dudadudadu Then do da dudadudadu",
+                                      ),
+                                    /*DescriptionCard(
+                                          "1",
+                                          "Go to Settings",
+                                          "assets/test_photo.png",
+                                          "Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu "
+                                              "Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu ")*/));
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Icon(icons[index], size: 28),
+                                  child: Icon(icons[index], size: 24, color: Colors.blue),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text(details[index], style: TextStyle(fontSize: 24)),
+                                  child: Text(details[index],
+                                      style: TextStyle(fontSize: 24)),
                                 ),
                               ],
                             ),
                           ),
                         ),
-                        const Divider(color: Colors.black,)
+                        const Divider(
+                          color: Colors.black,
+                        )
                       ],
                     ),
                   );

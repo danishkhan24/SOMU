@@ -16,6 +16,8 @@ dependencies:
   flutter_native_splash: ^2.1.6
   flutter_svg: ^1.0.3
   flutter_inappwebview: ^5.4.3+7
+  sliver_tools: ^0.2.7
+  flutter_launcher_icons: ^0.10.0
 
 dev_dependencies:
   flutter_test:
@@ -32,15 +34,23 @@ flutter:
     - assets/AppleLogo.svg
     - assets/Android.svg
     - assets/test_photo.png
+    - assets/book.png
 
   fonts:
     - family: Roboto
       fonts:
         - asset: fonts/Roboto-Regular.ttf
+    - family: CustomIcons
+      fonts:
+        - asset: fonts/CustomIcons.ttf
   uses-material-design: true
 
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/book.png"
 
 flutter_native_splash:
-  color: "#000000"
+  image: "assets/Staffordshire_Police_full.png"
+  color: "#FFFFFF"
   android: true
-
