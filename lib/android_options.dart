@@ -20,7 +20,7 @@ class _AndroidGuidesState extends State<AndroidGuides> {
         title: const Text(
           "Android Options",
           style: TextStyle(
-              color: Colors.white, fontSize: 28, fontFamily: 'Roboto'),
+              color: Colors.white, fontSize: 26, fontFamily: 'Roboto-Regular'),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -84,7 +84,7 @@ class _AndroidGuidesState extends State<AndroidGuides> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Material(
-                          borderRadius: BorderRadius.all(Radius.circular(100)),
+                          borderRadius: const BorderRadius.all(Radius.circular(100)),
                           child: Ink(
                             width: width * 0.8,
                             height: height * 0.1,
@@ -130,7 +130,7 @@ class _AndroidGuidesState extends State<AndroidGuides> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Material(
-                          borderRadius: BorderRadius.all(Radius.circular(100)),
+                          borderRadius: const BorderRadius.all(Radius.circular(100)),
                           child: Ink(
                             width: width * 0.8,
                             height: height * 0.1,
@@ -150,7 +150,7 @@ class _AndroidGuidesState extends State<AndroidGuides> {
                                   MainAxisAlignment.spaceAround,
                                   children: const [
                                     Icon(
-                                      Icons.screen_search_desktop,
+                                      Icons.phonelink_lock,
                                       color: Colors.white,
                                     ),
                                     Text(

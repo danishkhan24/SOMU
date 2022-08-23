@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
           child: Text(
             "KEV SOMU",
             style: TextStyle(
-                color: Colors.white, fontSize: 36, fontFamily: 'Roboto'),
+                color: Colors.white, fontSize: 36, fontFamily: "Righteous"),
           ),
         ),
         backgroundColor: Colors.transparent,

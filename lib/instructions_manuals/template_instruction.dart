@@ -16,12 +16,11 @@ class Section extends MultiSliver {
           pushPinnedChildren: true,
           children: [
             SliverPinnedHeader(
-              child:
-              Container(
+              child: Container(
                 decoration: const BoxDecoration(color: Colors.blueGrey),
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 8.0, top: 8.0, bottom: 8.0),
+                  padding:
+                      const EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -36,16 +35,23 @@ class Section extends MultiSliver {
                           child: Text(
                             number,
                             style: const TextStyle(
-                                fontSize: 24, color: Colors.white),
+                              fontSize: 24,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 24.0),
-                        child: Text(
-                          title,
-                          style: const TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.bold),
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 24.0),
+                          child: Text(
+                            title,
+                            style: const TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                overflow: TextOverflow.fade),
+                          ),
                         ),
                       ),
                     ],
@@ -58,15 +64,12 @@ class Section extends MultiSliver {
         );
 }
 
-
 class SliverScaffold extends StatelessWidget {
-  final String number;
-  final String title;
-  final String imageReference;
-  final String description;
+  final List<String> title;
+  final List<String> imageReference;
+  final List<String> description;
 
-  const SliverScaffold(
-      this.number, this.title, this.imageReference, this.description,
+  const SliverScaffold(this.title, this.imageReference, this.description,
       {Key? key})
       : super(key: key);
 
@@ -80,8 +83,7 @@ class SliverScaffold extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           "Calls",
-          style: TextStyle(
-              color: Colors.white, fontSize: 28, fontFamily: 'Roboto'),
+          style: TextStyle(color: Colors.white, fontSize: 28),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -112,7 +114,7 @@ class SliverScaffold extends StatelessWidget {
             color: const Color.fromRGBO(41, 50, 65, 1),
           ),
           Padding(
-            padding: EdgeInsets.only(top: height * 0.1),
+            padding: EdgeInsets.only(top: height * 0.12),
             child: Container(
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -123,61 +125,31 @@ class SliverScaffold extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: height * 0.1),
+            padding: EdgeInsets.only(top: height * 0.12),
             child: CustomScrollView(
-              slivers: [
-                Section(
-                  width: width,
-                  height: height,
-                  number: number,
-                  title: title,
-                  headerColor: Colors.blue,
-                  items: <Widget>[
-                    Container(
-                      width: width,
-                      height: height,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(imageReference),
-                          fit: BoxFit.fill,
+              slivers: List.generate(
+                title.length,
+                (index) {
+                  return Section(
+                    width: width,
+                    height: height,
+                    number: "${index + 1}",
+                    title: title[index],
+                    headerColor: Colors.blue,
+                    items: <Widget>[
+                      Image(image: AssetImage(imageReference[index])),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 12.0, left: 12, right: 12, bottom: 36),
+                        child: Text(
+                          description[index],
+                          style: const TextStyle(fontSize: 20),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Text(
-                        description,
-                        style: const TextStyle(
-                            fontSize: 16, overflow: TextOverflow.fade),
-                      ),
-                    ),
-                  ],
-                ),
-                Section(
-                  width: width,
-                  height: height,
-                  number: "2",
-                  title: 'Select Calls',
-                  headerColor: Colors.red,
-                  items: List.generate(
-                      10,
-                      (index) => ListTile(
-                            title: Text('Item #${index + 11}'),
-                          )),
-                ),
-                Section(
-                  width: width,
-                  height: height,
-                  number: "3",
-                  title: 'Category #3',
-                  headerColor: Colors.green,
-                  items: List.generate(
-                      10,
-                      (index) => ListTile(
-                            title: Text('Item #${index + 11}'),
-                          )),
-                ),
-              ],
+                    ],
+                  );
+                },
+              ),
             ),
           ),
         ],

@@ -25,11 +25,11 @@ class _IMEISearchState extends State<IMEISearch> {
           children: [
             Padding(
               padding: EdgeInsets.only(
-                top: height * 0.1,
+                top: height * 0.12,
               ),
               child: SizedBox(
                 width: width,
-                height: height * 0.83,
+                height: height * 0.8,
                 child: InAppWebView(
                   initialUrlRequest:
                       URLRequest(url: Uri.parse("https://www.imei.info/")),

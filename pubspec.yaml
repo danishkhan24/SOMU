@@ -27,6 +27,7 @@ dev_dependencies:
 
 flutter:
   assets:
+    - assets/Staffordshire_Police_full.png
     - assets/MobilePhones.svg
     - assets/Computers.svg
     - assets/Tablets.svg
@@ -35,11 +36,25 @@ flutter:
     - assets/Android.svg
     - assets/test_photo.png
     - assets/book.png
+    - assets/calls/homepage.jpeg
+    - assets/calls/app_drawer.jpeg
+    - assets/calls/call_log.jpeg
+    - assets/messages/messages_app.jpeg
+    - assets/messages/archive_messages.jpeg
+    - assets/gallery/archive_photos.jpeg
+    - assets/gallery/photos.jpeg
+    - assets/downloads/open_drawer.jpeg
+    - assets/downloads/download_button.jpeg
+    - assets/snapchat/homescreen.jpg
+    - assets/snapchat/mysnaps.jpg
+    - assets/snapchat/my_eyes_only.jpg
+    - assets/whatsapp/chat_screen.jpg
+    - assets/whatsapp/archived_chats.png
 
   fonts:
-    - family: Roboto
+    - family: Righteous
       fonts:
-        - asset: fonts/Roboto-Regular.ttf
+        - asset: fonts/Righteous-Regular.ttf
     - family: CustomIcons
       fonts:
         - asset: fonts/CustomIcons.ttf

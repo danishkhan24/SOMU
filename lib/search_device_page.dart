@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:somu/custom_icons_icons.dart';
-import 'package:somu/instructions_manuals/calls.dart';
+import 'custom_icons_icons.dart';
+import 'instructions_manuals/calls_instruction_page.dart';
+import 'instructions_manuals/gallery_instruction_page.dart';
+import 'instructions_manuals/messages_instruction_page.dart';
+import 'instructions_manuals/downloads_instruction_page.dart';
+import 'instructions_manuals/snapchat_instruction_page.dart';
+import 'instructions_manuals/temp.dart';
+import 'instructions_manuals/whatsapp_instruction_page.dart';
 
 class SearchDevicePage extends StatelessWidget {
   const SearchDevicePage({Key? key}) : super(key: key);
@@ -16,7 +22,7 @@ class SearchDevicePage extends StatelessWidget {
         title: const Text(
           "Android Options",
           style: TextStyle(
-              color: Colors.white, fontSize: 28, fontFamily: 'Roboto'),
+              color: Colors.white, fontSize: 26, fontFamily: 'Roboto'),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -78,12 +84,13 @@ class SearchDevicePage extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(top: height * 0.01),
-                    child: Category(
+                    child: category(
                       context,
                       "General",
                       width * 0.9,
-                      height * 0.6,
+                      height * 0.7,
                       [
+                        "Unlock Device",
                         "Calls",
                         "Texts",
                         "Gallery",
@@ -92,6 +99,7 @@ class SearchDevicePage extends StatelessWidget {
                         "Location History",
                       ],
                       [
+                        Icons.lock_open,
                         Icons.call,
                         Icons.message,
                         Icons.photo,
@@ -99,13 +107,22 @@ class SearchDevicePage extends StatelessWidget {
                         Icons.history,
                         Icons.location_on,
                       ],
+                      const [
+                        Nan(),
+                        CallsInstructionPage(),
+                        MessagesInstructionPage(),
+                        GalleryInstructionPage(),
+                        DownloadsInstructionPage(),
+                        Nan(),
+                        Nan(),
+                      ],
                     ),
                   ),
-                  Category(
+                  category(
                     context,
                     "Applications",
                     width * 0.9,
-                    height * 1.1,
+                    height * 1.2,
                     [
                       "WhatsApp",
                       "SnapChat",
@@ -134,6 +151,20 @@ class SearchDevicePage extends StatelessWidget {
                       CustomIcons.reddit,
                       CustomIcons.telegram_plane,
                     ],
+                    const [
+                      WhatsappInstructionPage(),
+                      SnapchatInstructionPage(),
+                      Nan(),
+                      Nan(),
+                      Nan(),
+                      Nan(),
+                      Nan(),
+                      Nan(),
+                      Nan(),
+                      Nan(),
+                      Nan(),
+                      Nan(),
+                    ],
                   ),
                 ],
               ),
@@ -144,8 +175,8 @@ class SearchDevicePage extends StatelessWidget {
     );
   }
 
-  Widget Category(BuildContext context, String title, double width,
-      double height, List<String> details, List<IconData> icons) {
+  Widget category(BuildContext context, String title, double width,
+      double height, List<String> details, List<IconData> icons, List<StatelessWidget> route) {
     return Container(
       width: width,
       decoration: BoxDecoration(
@@ -185,33 +216,25 @@ class SearchDevicePage extends StatelessWidget {
                             splashColor: Colors.grey,
                             onTap: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>  const SliverScaffold(
-                                          "1",
-                                          "Go to Settings",
-                                          "assets/test_photo.png",
-                                          "Then do da dudadudadu Then do da dudadudadu"
-                                              "Then do da dudadudadu Then do da dudadudadu",
-                                      ),
-                                    /*DescriptionCard(
-                                          "1",
-                                          "Go to Settings",
-                                          "assets/test_photo.png",
-                                          "Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu "
-                                              "Then do da dudadudadu Then do da dudadudadu Then do da dudadudadu ")*/));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      route[index],
+                                ),
+                              );
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Icon(icons[index], size: 24, color: Colors.blue),
+                                  child: Icon(icons[index],
+                                      size: 24, color: Colors.blue),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(details[index],
-                                      style: TextStyle(fontSize: 24)),
+                                      style: const TextStyle(fontSize: 24)),
                                 ),
                               ],
                             ),
