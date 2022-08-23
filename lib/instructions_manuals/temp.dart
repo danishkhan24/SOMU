@@ -7,6 +7,7 @@ class Nan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SliverScaffold(
+      "Oops",
       [
         "Tutorial Under Construction",
       ],

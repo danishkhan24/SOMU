@@ -7,6 +7,7 @@ class MessagesInstructionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SliverScaffold(
+      "Messages",
       [
         "Open App Drawer",
         "Open Messages App",

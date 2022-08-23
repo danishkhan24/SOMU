@@ -7,22 +7,20 @@ class SnapchatInstructionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SliverScaffold(
+      "SnapChat",
       [
-        "Open App Drawer",
-        "Find & Open \"SnapChat\" App",
+        "Open SnapChat App",
         "Swipe Up On Camera Screen",
         "Select \"My Eyes Only\" Tab",
         "Look for Hidden Photos/Videos",
       ],
       [
-        "assets/calls/homepage.jpeg",
-        "assets/calls/app_drawer.jpeg",
+        "assets/snapchat/open_snapchat_ios.jpg",
         "assets/snapchat/homescreen.jpg",
         "assets/snapchat/mysnaps.jpg",
         "assets/snapchat/my_eyes_only.jpg",
       ],
       [
-        "Swipe Up as shown in the image to open the app drawer",
         "Open the \"SnapChat\" application as highlighted in the image",
         "Now after opening the application, you would be on camera screen"
             " there you need to swipe up to open snapchat gallery",

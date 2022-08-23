@@ -7,6 +7,7 @@ class DownloadsInstructionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SliverScaffold(
+      "Downloads",
       [
         "Open App Drawer",
         "Open \"Files\"/\"File Manager\" App",

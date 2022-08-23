@@ -50,6 +50,16 @@ flutter:
     - assets/snapchat/my_eyes_only.jpg
     - assets/whatsapp/chat_screen.jpg
     - assets/whatsapp/archived_chats.png
+    - assets/chrome/step1.webp
+    - assets/chrome/step2.webp
+    - assets/calls/ios_homepage.jpg
+    - assets/calls/ios_recent_calls.jpg
+    - assets/calls/ios_calls_info.jpg
+    - assets/snapchat/open_snapchat_ios.jpg
+    - assets/whatsapp/open_whatsapp_ios.jpg
+    - assets/gallery/open_gallery_ios.jpg
+    - assets/gallery/search_photos_ios.jpg
+    - assets/gallery/hidden_archived_photos_ios.jpg
 
   fonts:
     - family: Righteous

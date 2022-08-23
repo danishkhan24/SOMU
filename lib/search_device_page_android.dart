@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'custom_icons_icons.dart';
-import 'instructions_manuals/calls_instruction_page.dart';
-import 'instructions_manuals/gallery_instruction_page.dart';
-import 'instructions_manuals/messages_instruction_page.dart';
-import 'instructions_manuals/downloads_instruction_page.dart';
-import 'instructions_manuals/snapchat_instruction_page.dart';
+import 'instructions_manuals/android/browsing_history.dart';
+import 'instructions_manuals/android/calls_instruction_page.dart';
+import 'instructions_manuals/android/gallery_instruction_page.dart';
+import 'instructions_manuals/android/messages_instruction_page.dart';
+import 'instructions_manuals/android/downloads_instruction_page.dart';
+import 'instructions_manuals/android/snapchat_instruction_page.dart';
 import 'instructions_manuals/temp.dart';
-import 'instructions_manuals/whatsapp_instruction_page.dart';
+import 'instructions_manuals/android/whatsapp_instruction_page.dart';
 
-class SearchDevicePage extends StatelessWidget {
-  const SearchDevicePage({Key? key}) : super(key: key);
+class SearchDevicePageAndroid extends StatelessWidget {
+  const SearchDevicePageAndroid({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +96,7 @@ class SearchDevicePage extends StatelessWidget {
                         "Texts",
                         "Gallery",
                         "Downloads",
-                        "Browsing History",
+                        "Chrome History",
                         "Location History",
                       ],
                       [
@@ -113,7 +114,7 @@ class SearchDevicePage extends StatelessWidget {
                         MessagesInstructionPage(),
                         GalleryInstructionPage(),
                         DownloadsInstructionPage(),
-                        Nan(),
+                        HistoryInstructionPage(),
                         Nan(),
                       ],
                     ),

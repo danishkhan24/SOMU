@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:somu/search_device_page_android.dart';
+import 'package:somu/search_device_page_ios.dart';
 
-class AndroidGuides extends StatefulWidget {
-  const AndroidGuides({Key? key}) : super(key: key);
+class IOSGuides extends StatefulWidget {
+  const IOSGuides({Key? key}) : super(key: key);
 
   @override
-  State<AndroidGuides> createState() => _AndroidGuidesState();
+  State<IOSGuides> createState() => _IOSGuidesState();
 }
 
-class _AndroidGuidesState extends State<AndroidGuides> {
+class _IOSGuidesState extends State<IOSGuides> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -18,7 +18,7 @@ class _AndroidGuidesState extends State<AndroidGuides> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text(
-          "Android Options",
+          "iOS Options",
           style: TextStyle(
               color: Colors.white, fontSize: 26, fontFamily: 'Roboto-Regular'),
         ),
@@ -67,7 +67,7 @@ class _AndroidGuidesState extends State<AndroidGuides> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsets.only(top: height * 0.25, right: width * 0.1),
+                    EdgeInsets.only(top: height * 0.25, right: width * 0.1),
                     child: const Text(
                       "Please Select an Option",
                       style: TextStyle(color: Colors.white, fontSize: 18),
@@ -77,7 +77,7 @@ class _AndroidGuidesState extends State<AndroidGuides> {
               ),
               Padding(
                   padding:
-                      EdgeInsets.only(left: 18, right: 18, top: height * 0.1),
+                  EdgeInsets.only(left: 18, right: 18, top: height * 0.1),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -91,7 +91,7 @@ class _AndroidGuidesState extends State<AndroidGuides> {
                             decoration: const BoxDecoration(
                               color: Color.fromRGBO(41, 50, 65, 1),
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
+                              BorderRadius.all(Radius.circular(100)),
                             ),
                             child: InkWell(
                               borderRadius: BorderRadius.circular(100),
@@ -99,13 +99,13 @@ class _AndroidGuidesState extends State<AndroidGuides> {
                               onTap: () {
                                 Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const SearchDevicePageAndroid()));
+                                    MaterialPageRoute(builder: (context) => const SearchDevicePageIOS()));
                               },
                               child: Padding(
                                 padding: const EdgeInsets.all(18),
                                 child: Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
+                                  MainAxisAlignment.spaceAround,
                                   children: const [
                                     Icon(
                                       Icons.screen_search_desktop,

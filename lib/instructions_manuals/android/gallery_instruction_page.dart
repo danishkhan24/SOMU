@@ -7,6 +7,7 @@ class GalleryInstructionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SliverScaffold(
+      "Gallery",
       [
         "Open App Drawer",
         "Open Gallery/Photos App",

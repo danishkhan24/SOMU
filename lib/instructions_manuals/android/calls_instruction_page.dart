@@ -7,6 +7,7 @@ class CallsInstructionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SliverScaffold(
+      "Calls",
       [
         "Open App Drawer",
         "Open Phone App",

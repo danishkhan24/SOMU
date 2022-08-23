@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:somu/android_options.dart';
 import 'package:somu/card_maker.dart';
 
+import 'ios_options.dart';
+
 class MobileDevices extends StatefulWidget {
   const MobileDevices({Key? key}) : super(key: key);
 
@@ -95,6 +97,7 @@ class _MobileDevicesState extends State<MobileDevices> {
                       "assets/AppleLogo.svg",
                       width * 0.1,
                       height * 0.2,
+                      const IOSGuides(),
                     ),
                     CardClass.cardMaker(
                       context,

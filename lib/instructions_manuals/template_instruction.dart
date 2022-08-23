@@ -65,11 +65,12 @@ class Section extends MultiSliver {
 }
 
 class SliverScaffold extends StatelessWidget {
+  final String headline;
   final List<String> title;
   final List<String> imageReference;
   final List<String> description;
 
-  const SliverScaffold(this.title, this.imageReference, this.description,
+  const SliverScaffold(this.headline, this.title, this.imageReference, this.description,
       {Key? key})
       : super(key: key);
 
@@ -81,9 +82,9 @@ class SliverScaffold extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text(
-          "Calls",
-          style: TextStyle(color: Colors.white, fontSize: 28),
+        title: Text(
+          headline,
+          style: const TextStyle(color: Colors.white, fontSize: 28),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
