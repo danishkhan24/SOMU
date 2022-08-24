@@ -45,6 +45,10 @@ flutter:
     - assets/gallery/photos.jpeg
     - assets/downloads/open_drawer.jpeg
     - assets/downloads/download_button.jpeg
+    - assets/downloads/open_downloads_ios.jpg
+    - assets/downloads/step_2_ios.jpg
+    - assets/downloads/step_3_ios.jpg
+    - assets/downloads/step_4_ios.jpg
     - assets/snapchat/homescreen.jpg
     - assets/snapchat/mysnaps.jpg
     - assets/snapchat/my_eyes_only.jpg
@@ -52,6 +56,9 @@ flutter:
     - assets/whatsapp/archived_chats.png
     - assets/chrome/step1.webp
     - assets/chrome/step2.webp
+    - assets/chrome/step_1_ios.jpg
+    - assets/chrome/step_2_ios.jpg
+    - assets/chrome/step_3_ios.jpg
     - assets/calls/ios_homepage.jpg
     - assets/calls/ios_recent_calls.jpg
     - assets/calls/ios_calls_info.jpg

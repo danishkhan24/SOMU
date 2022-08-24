@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'custom_icons_icons.dart';
-import 'instructions_manuals/android/browsing_history.dart';
+import 'instructions_manuals/ios/chrome_history.dart';
 import 'instructions_manuals/ios/call.dart';
 import 'instructions_manuals/ios/gallery.dart';
-import 'instructions_manuals/android/messages_instruction_page.dart';
-import 'instructions_manuals/android/downloads_instruction_page.dart';
+import 'instructions_manuals/ios/downloads.dart';
 import 'instructions_manuals/ios/snapchat.dart';
 import 'instructions_manuals/temp.dart';
 import 'instructions_manuals/ios/whatsapp.dart';
@@ -111,7 +110,7 @@ class SearchDevicePageIOS extends StatelessWidget {
                       const [
                         Nan(),
                         CallsInstructionPage(),
-                        MessagesInstructionPage(),
+                        Nan(),
                         GalleryInstructionPage(),
                         DownloadsInstructionPage(),
                         HistoryInstructionPage(),

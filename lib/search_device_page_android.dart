@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'custom_icons_icons.dart';
-import 'instructions_manuals/android/browsing_history.dart';
+import 'instructions_manuals/android/chrome_browsing_history.dart';
 import 'instructions_manuals/android/calls_instruction_page.dart';
 import 'instructions_manuals/android/gallery_instruction_page.dart';
 import 'instructions_manuals/android/messages_instruction_page.dart';
