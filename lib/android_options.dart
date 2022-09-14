@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:somu/search_device_page_android.dart';
 
+import 'instructions_manuals/android/seize_device.dart';
+
 class AndroidGuides extends StatefulWidget {
   const AndroidGuides({Key? key}) : super(key: key);
 
@@ -39,7 +41,8 @@ class _AndroidGuidesState extends State<AndroidGuides> {
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               elevation: 1,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25)),
             ),
           ),
         ],
@@ -76,101 +79,112 @@ class _AndroidGuidesState extends State<AndroidGuides> {
                 ],
               ),
               Padding(
-                  padding:
-                      EdgeInsets.only(left: 18, right: 18, top: height * 0.1),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          borderRadius: const BorderRadius.all(Radius.circular(100)),
-                          child: Ink(
-                            width: width * 0.8,
-                            height: height * 0.1,
-                            decoration: const BoxDecoration(
-                              color: Color.fromRGBO(41, 50, 65, 1),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(100),
-                              splashColor: Colors.white,
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => const SearchDevicePageAndroid()));
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.all(18),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: const [
-                                    Icon(
-                                      Icons.screen_search_desktop,
-                                      color: Colors.white,
-                                    ),
-                                    Text(
-                                      "Search The Device",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 20),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_outlined,
-                                      color: Colors.white,
-                                    ),
-                                  ],
-                                ),
+                padding:
+                    EdgeInsets.only(left: 18, right: 18, top: height * 0.1),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Material(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(100)),
+                        child: Ink(
+                          width: width * 0.8,
+                          height: height * 0.1,
+                          decoration: const BoxDecoration(
+                            color: Color.fromRGBO(41, 50, 65, 1),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(100)),
+                          ),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(100),
+                            splashColor: Colors.white,
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SearchDevicePageAndroid()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(18),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: const [
+                                  Icon(
+                                    Icons.screen_search_desktop,
+                                    color: Colors.white,
+                                  ),
+                                  Text(
+                                    "Search The Device",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 20),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_outlined,
+                                    color: Colors.white,
+                                  ),
+                                ],
                               ),
                             ),
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          borderRadius: const BorderRadius.all(Radius.circular(100)),
-                          child: Ink(
-                            width: width * 0.8,
-                            height: height * 0.1,
-                            decoration: const BoxDecoration(
-                              color: Color.fromRGBO(41, 50, 65, 1),
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(100),
-                              splashColor: Colors.white,
-                              onTap: () {},
-                              child: Padding(
-                                padding: const EdgeInsets.all(18),
-                                child: Row(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.spaceAround,
-                                  children: const [
-                                    Icon(
-                                      Icons.phonelink_lock,
-                                      color: Colors.white,
-                                    ),
-                                    Text(
-                                      "Seize The Device",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 20),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_outlined,
-                                      color: Colors.white,
-                                    ),
-                                  ],
-                                ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Material(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(100)),
+                        child: Ink(
+                          width: width * 0.8,
+                          height: height * 0.1,
+                          decoration: const BoxDecoration(
+                            color: Color.fromRGBO(41, 50, 65, 1),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(100)),
+                          ),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(100),
+                            splashColor: Colors.white,
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                      const SeizeDeviceInstructionPage()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(18),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: const [
+                                  Icon(
+                                    Icons.phonelink_lock,
+                                    color: Colors.white,
+                                  ),
+                                  Text(
+                                    "Seize The Device",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 20),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_outlined,
+                                    color: Colors.white,
+                                  ),
+                                ],
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ],
-                  )),
+                    ),
+                  ],
+                ),
+              ),
             ],
           )
         ],

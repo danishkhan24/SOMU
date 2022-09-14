@@ -67,6 +67,30 @@ flutter:
     - assets/gallery/open_gallery_ios.jpg
     - assets/gallery/search_photos_ios.jpg
     - assets/gallery/hidden_archived_photos_ios.jpg
+    - assets/google_activity/step_1.jpg
+    - assets/google_activity/step_2.jpg
+    - assets/google_activity/step_3.jpg
+    - assets/google_activity/step_4.jpg
+    - assets/seize_device/step_1_ios.jpeg
+    - assets/seize_device/step_2_ios.jpg
+    - assets/seize_device/step_3_ios.jpg
+    - assets/seize_device/step_4_ios.jpg
+    - assets/seize_device/step_5_ios.jpg
+    - assets/seize_device/step_6_ios.jpg
+    - assets/seize_device/step_7_ios.jpg
+    - assets/seize_device/step_8_ios.jpg
+    - assets/seize_device/step_1_android.jpeg
+    - assets/seize_device/step_2_android.jpg
+    - assets/seize_device/step_3_android.jpg
+    - assets/seize_device/step_4_android.jpg
+    - assets/seize_device/step_5_android.jpg
+    - assets/seize_device/step_6_android.jpg
+    - assets/hidden_apps/step_1_ios.jpg
+    - assets/hidden_apps/step_2_ios.png
+    - assets/hidden_apps/step_3_ios.png
+    - assets/hidden_apps/step_1_android.jpg
+    - assets/hidden_apps/step_2_android.jpg
+    - assets/hidden_apps/step_3_android.jpg
 
   fonts:
     - family: Righteous

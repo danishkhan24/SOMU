@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:somu/search_device_page_ios.dart';
 
+import 'instructions_manuals/ios/seize_device.dart';
+
 class IOSGuides extends StatefulWidget {
   const IOSGuides({Key? key}) : super(key: key);
 
@@ -142,7 +144,11 @@ class _IOSGuidesState extends State<IOSGuides> {
                             child: InkWell(
                               borderRadius: BorderRadius.circular(100),
                               splashColor: Colors.white,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const SeizeDeviceInstructionPage()));
+                              },
                               child: Padding(
                                 padding: const EdgeInsets.all(18),
                                 child: Row(

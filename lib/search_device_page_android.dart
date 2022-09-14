@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:somu/instructions_manuals/android/hidden_apps.dart';
 import 'custom_icons_icons.dart';
-import 'instructions_manuals/android/chrome_browsing_history.dart';
-import 'instructions_manuals/android/calls_instruction_page.dart';
-import 'instructions_manuals/android/gallery_instruction_page.dart';
-import 'instructions_manuals/android/messages_instruction_page.dart';
-import 'instructions_manuals/android/downloads_instruction_page.dart';
-import 'instructions_manuals/android/snapchat_instruction_page.dart';
+import 'instructions_manuals/android/chrome_history.dart';
+import 'instructions_manuals/android/calls.dart';
+import 'instructions_manuals/android/gallery.dart';
+import 'instructions_manuals/android/google_activity.dart';
+import 'instructions_manuals/android/messages.dart';
+import 'instructions_manuals/android/downloads.dart';
+import 'instructions_manuals/android/snapchat.dart';
 import 'instructions_manuals/temp.dart';
-import 'instructions_manuals/android/whatsapp_instruction_page.dart';
+import 'instructions_manuals/android/whatsapp.dart';
 
 class SearchDevicePageAndroid extends StatelessWidget {
   const SearchDevicePageAndroid({Key? key}) : super(key: key);
@@ -91,31 +93,31 @@ class SearchDevicePageAndroid extends StatelessWidget {
                       width * 0.9,
                       height * 0.7,
                       [
-                        "Unlock Device",
+                        "Hidden Apps",
                         "Calls",
                         "Texts",
                         "Gallery",
                         "Downloads",
                         "Chrome History",
-                        "Location History",
+                        "Google Activity",
                       ],
                       [
-                        Icons.lock_open,
+                        Icons.apps,
                         Icons.call,
                         Icons.message,
                         Icons.photo,
                         Icons.download_rounded,
                         Icons.history,
-                        Icons.location_on,
+                        Icons.local_activity,
                       ],
                       const [
-                        Nan(),
+                        HiddenAppsInstructionPage(),
                         CallsInstructionPage(),
                         MessagesInstructionPage(),
                         GalleryInstructionPage(),
                         DownloadsInstructionPage(),
                         HistoryInstructionPage(),
-                        Nan(),
+                        GoogleActivityInstructionPage(),
                       ],
                     ),
                   ),
@@ -123,48 +125,48 @@ class SearchDevicePageAndroid extends StatelessWidget {
                     context,
                     "Applications",
                     width * 0.9,
-                    height * 1.2,
+                    height * 0.25,
                     [
                       "WhatsApp",
                       "SnapChat",
-                      "Messenger",
-                      "Instagram",
-                      "Facebook",
-                      "Google Drive",
-                      "One Drive",
-                      "Dropbox",
-                      "Twitter",
-                      "Discord",
-                      "Reddit",
-                      "Telegram",
+                      // "Messenger",
+                      // "Instagram",
+                      // "Facebook",
+                      // "Google Drive",
+                      // "One Drive",
+                      // "Dropbox",
+                      // "Twitter",
+                      // "Discord",
+                      // "Reddit",
+                      // "Telegram",
                     ],
                     [
                       CustomIcons.whatsapp,
                       CustomIcons.snapchat,
-                      CustomIcons.facebook_messenger,
-                      CustomIcons.instagram,
-                      CustomIcons.facebook,
-                      CustomIcons.google_drive,
-                      CustomIcons.cloud_1,
-                      CustomIcons.dropbox_1,
-                      CustomIcons.twitter_1,
-                      CustomIcons.discord,
-                      CustomIcons.reddit,
-                      CustomIcons.telegram_plane,
+                      // CustomIcons.facebook_messenger,
+                      // CustomIcons.instagram,
+                      // CustomIcons.facebook,
+                      // CustomIcons.google_drive,
+                      // CustomIcons.cloud_1,
+                      // CustomIcons.dropbox_1,
+                      // CustomIcons.twitter_1,
+                      // CustomIcons.discord,
+                      // CustomIcons.reddit,
+                      // CustomIcons.telegram_plane,
                     ],
                     const [
                       WhatsappInstructionPage(),
                       SnapchatInstructionPage(),
-                      Nan(),
-                      Nan(),
-                      Nan(),
-                      Nan(),
-                      Nan(),
-                      Nan(),
-                      Nan(),
-                      Nan(),
-                      Nan(),
-                      Nan(),
+                      // Nan(),
+                      // Nan(),
+                      // Nan(),
+                      // Nan(),
+                      // Nan(),
+                      // Nan(),
+                      // Nan(),
+                      // Nan(),
+                      // Nan(),
+                      // Nan(),
                     ],
                   ),
                 ],
