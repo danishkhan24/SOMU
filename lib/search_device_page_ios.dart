@@ -6,8 +6,8 @@ import 'instructions_manuals/ios/calls.dart';
 import 'instructions_manuals/ios/gallery.dart';
 import 'instructions_manuals/ios/downloads.dart';
 import 'instructions_manuals/ios/google_activity.dart';
+import 'instructions_manuals/ios/messages.dart';
 import 'instructions_manuals/ios/snapchat.dart';
-import 'instructions_manuals/temp.dart';
 import 'instructions_manuals/ios/whatsapp.dart';
 
 class SearchDevicePageIOS extends StatelessWidget {
@@ -90,10 +90,11 @@ class SearchDevicePageIOS extends StatelessWidget {
                       context,
                       "General",
                       width * 0.9,
-                      height * 0.6,
+                      height * 0.65,
                       [
                         "Hidden Apps",
                         "Calls",
+                        "Messages",
                         "Gallery",
                         "Downloads",
                         "Chrome History",
@@ -102,6 +103,7 @@ class SearchDevicePageIOS extends StatelessWidget {
                       [
                         Icons.apps,
                         Icons.call,
+                        Icons.message,
                         Icons.photo,
                         Icons.download_rounded,
                         Icons.history,
@@ -110,6 +112,7 @@ class SearchDevicePageIOS extends StatelessWidget {
                       const [
                         HiddenAppsInstructionPage(),
                         CallsInstructionPage(),
+                        MessagesInstructionPage(),
                         GalleryInstructionPage(),
                         DownloadsInstructionPage(),
                         HistoryInstructionPage(),

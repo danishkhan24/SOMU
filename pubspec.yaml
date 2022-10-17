@@ -38,7 +38,7 @@ flutter:
     - assets/book.png
     - assets/calls/homepage.jpeg
     - assets/calls/app_drawer.jpeg
-    - assets/calls/call_log.jpeg
+    - assets/calls/call_log.jpg
     - assets/messages/messages_app.jpeg
     - assets/messages/archive_messages.jpeg
     - assets/gallery/archive_photos.jpeg
@@ -91,6 +91,11 @@ flutter:
     - assets/hidden_apps/step_1_android.jpg
     - assets/hidden_apps/step_2_android.jpg
     - assets/hidden_apps/step_3_android.jpg
+    - assets/messages/homepage_ios.jpg
+    - assets/messages/messages_ios.jpg
+    - assets/remove_phone_case.webp
+    - assets/back_side_phone.jpg
+    - assets/iOS_android_logos.jpeg
 
   fonts:
     - family: Righteous

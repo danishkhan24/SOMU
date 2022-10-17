@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:somu/android_options.dart';
 import 'package:somu/card_maker.dart';
 
+import 'instructions_manuals/needHelpDecidingDevice.dart';
 import 'ios_options.dart';
 
 class MobileDevices extends StatefulWidget {
@@ -112,12 +113,21 @@ class _MobileDevicesState extends State<MobileDevices> {
               ),
               Padding(
                 padding: EdgeInsets.only(top: height * 0.2),
-                child: const Text(
-                  "Need Help Deciding? Click Here",
-                  style: TextStyle(
-                      color: Colors.blue,
-                      decoration: TextDecoration.underline,
-                      fontSize: 16),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                            const DeviceHelpInstructionPage()));
+                  },
+                  child: const Text(
+                    "Need Help Deciding? Click Here",
+                    style: TextStyle(
+                        color: Colors.blue,
+                        decoration: TextDecoration.underline,
+                        fontSize: 16),
+                  ),
                 ),
               ),
             ],

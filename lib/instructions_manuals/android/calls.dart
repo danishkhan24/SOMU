@@ -16,7 +16,7 @@ class CallsInstructionPage extends StatelessWidget {
       [
         "assets/calls/homepage.jpeg",
         "assets/calls/app_drawer.jpeg",
-        "assets/calls/call_log.jpeg",
+        "assets/calls/call_log.jpg",
       ],
       [
         "Swipe Up as shown in the image to open the app drawer",
